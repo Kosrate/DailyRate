@@ -1,0 +1,34 @@
+﻿using System;
+
+namespace DailyRate
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            (new Program()).run();
+        }
+
+        public void run()
+        {
+            double fee = calcualteFee(650.0);
+            Console.WriteLine($"Fee is {fee}");
+        }
+
+        private double calculateFee(double dailyRate = 500.0)
+        {
+            Console.WriteLine("calcualteFee using one optional parameter");
+
+            int defaultNoOfDays = 1;
+            return dailyRate * defaultNoOfDays;
+        }
+
+        private double calcualteFee()
+        {
+            Console.WriteLine("calculateFee using hardcoded values");
+            double defaultDailyRate = 400.0;
+            int defaultNoOfDays = 1;
+            return defaultDailyRate * defaultNoOfDays;
+        }
+    }
+}
